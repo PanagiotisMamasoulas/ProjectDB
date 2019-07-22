@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CandidateWindow</class>
+ <widget class="QMainWindow" name="CandidateWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>650</width>
+    <height>350</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Bahnschrift Light</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="1">
+     <spacer name="ButtonSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="Exit">
+      <property name="text">
+       <string>Log out</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="Reset">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="Save">
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="4">
+     <widget class="QTabWidget" name="Tabs">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bahnschrift Light</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideNone</enum>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>false</bool>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="ACCOUNT">
+       <attribute name="title">
+        <string>My Account</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="_username">
+          <property name="text">
+           <string>Username</string>
+          </property>
+          <property name="buddy">
+           <cstring>Username</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="Username">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="_password">
+          <property name="text">
+           <string>Password</string>
+          </property>
+          <property name="buddy">
+           <cstring>Password</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLineEdit" name="Password">
+          <property name="echoMode">
+           <enum>QLineEdit::PasswordEchoOnEdit</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="_name">
+          <property name="text">
+           <string>Name</string>
+          </property>
+          <property name="buddy">
+           <cstring>Name</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="Name"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="_surname">
+          <property name="text">
+           <string>Surname</string>
+          </property>
+          <property name="buddy">
+           <cstring>Surname</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLineEdit" name="Surname"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="_regdate">
+          <property name="text">
+           <string>Register date</string>
+          </property>
+          <property name="buddy">
+           <cstring>Regdate</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QDateTimeEdit" name="Regdate">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::PlusMinus</enum>
+          </property>
+          <property name="showGroupSeparator" stdset="0">
+           <bool>false</bool>
+          </property>
+          <property name="displayFormat">
+           <string notr="true">dd-MM-yyyy HH:mm:ss</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="_email">
+          <property name="text">
+           <string>E-Mail</string>
+          </property>
+          <property name="buddy">
+           <cstring>Email</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLineEdit" name="Email"/>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="_recommendations">
+          <property name="text">
+           <string>Recommendations</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="Recommendations"/>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLabel" name="_certificates">
+          <property name="text">
+           <string>Certificates</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QLineEdit" name="Certificates"/>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="C_biography">
+          <property name="text">
+           <string>Biography</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <spacer name="verticalSpacerBottom">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="1" rowspan="2" colspan="3">
+         <widget class="QPlainTextEdit" name="CBiography">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="APPLIC">
+       <attribute name="title">
+        <string>Applications</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0" colspan="2">
+         <widget class="QLabel" name="C_idpos">
+          <property name="text">
+           <string>Choose job to apply:</string>
+          </property>
+          <property name="buddy">
+           <cstring>CIDPos</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="CTitle">
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="C_recruiter">
+          <property name="text">
+           <string>Recruiter</string>
+          </property>
+          <property name="buddy">
+           <cstring>CRecruiter</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="C_position">
+          <property name="text">
+           <string>Title</string>
+          </property>
+          <property name="buddy">
+           <cstring>CTitle</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLineEdit" name="CRecruiter">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="C_edra">
+          <property name="text">
+           <string>Headquarters</string>
+          </property>
+          <property name="buddy">
+           <cstring>CEdra</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLabel" name="C_subdate">
+          <property name="text">
+           <string>Expiration of applications date</string>
+          </property>
+          <property name="buddy">
+           <cstring>CSubdate</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="CEdra">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="C_salary">
+          <property name="text">
+           <string>Salary</string>
+          </property>
+          <property name="buddy">
+           <cstring>CSalary</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QDateEdit" name="CStartdate">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="displayFormat">
+           <string notr="true">dd-MM-yyyy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="C_startdate">
+          <property name="text">
+           <string>Starting Date</string>
+          </property>
+          <property name="buddy">
+           <cstring>CStartdate</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="CAppFile"/>
+        </item>
+        <item row="3" column="3">
+         <widget class="QDateEdit" name="CSubdate">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::NoButtons</enum>
+          </property>
+          <property name="displayFormat">
+           <string notr="true">dd-MM-yyyy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="C_appfile">
+          <property name="text">
+           <string>Application File</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QSpinBox" name="CSalary">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::NoButtons</enum>
+          </property>
+          <property name="maximum">
+           <number>1000000000</number>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLabel" name="C_antikeim">
+          <property name="text">
+           <string>Subjects</string>
+          </property>
+          <property name="buddy">
+           <cstring>CAntikeim</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0" colspan="3">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="5" column="0" colspan="3">
+         <widget class="QLabel" name="C_state">
+          <property name="statusTip">
+           <string/>
+          </property>
+          <property name="text">
+           <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QPushButton" name="DeleteApp">
+          <property name="text">
+           <string>Delete</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3" rowspan="4">
+         <widget class="QListWidget" name="CAntikeim"/>
+        </item>
+        <item row="7" column="1" colspan="2">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="2" colspan="2">
+         <widget class="QComboBox" name="CIDPos"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="PROJECT">
+       <attribute name="title">
+        <string>Projects</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="EDUCATION">
+       <attribute name="title">
+        <string>Education</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>Tabs</tabstop>
+  <tabstop>Username</tabstop>
+  <tabstop>Password</tabstop>
+  <tabstop>Name</tabstop>
+  <tabstop>Surname</tabstop>
+  <tabstop>Regdate</tabstop>
+  <tabstop>Email</tabstop>
+  <tabstop>Recommendations</tabstop>
+  <tabstop>Certificates</tabstop>
+  <tabstop>CBiography</tabstop>
+  <tabstop>CIDPos</tabstop>
+  <tabstop>CTitle</tabstop>
+  <tabstop>CRecruiter</tabstop>
+  <tabstop>CEdra</tabstop>
+  <tabstop>CStartdate</tabstop>
+  <tabstop>CSalary</tabstop>
+  <tabstop>CSubdate</tabstop>
+  <tabstop>CAppFile</tabstop>
+  <tabstop>CAntikeim</tabstop>
+  <tabstop>Reset</tabstop>
+  <tabstop>Save</tabstop>
+  <tabstop>Exit</tabstop>
+  <tabstop>DeleteApp</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
