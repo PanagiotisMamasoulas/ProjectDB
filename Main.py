@@ -1100,6 +1100,8 @@ class mainWindow(object):
         self.FSRootcheck.stateChanged.connect(self.checkRoot)
         self.HOrder.currentIndexChanged.connect(self.updateHistoryOrder)
         self.HOrder2.currentIndexChanged.connect(self.updateHistory)
+        self.HTPStart.dateChanged.connect(self.updateHistory)
+        self.HTPEnd.dateChanged.connect(self.updateHistory)
 
     def retranslateAdminUi(self, AdminWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -1649,11 +1651,16 @@ class mainWindow(object):
                 self.HOrder2.addItem(x)
 
     def updateHistory(self):
-        Row = []
+        # Row = []
         self.HResults.setRowCount(0)
         hcursor = mydb.cursor()
+
         if self.HOrder.currentIndex() == 0:
-            hcursor.execute("SELECT * FROM history WHERE table_name = (%s) ORDER BY user", (self.HOrder2.currentText(),))
+            htpstart = self.HTPStart.date()
+            htpstart = htpstart.toString("yyyy-MM-dd")
+            htpend = self.HTPEnd.date()
+            htpend = htpend.toString("yyyy-MM-dd")
+            hcursor.execute("SELECT * FROM history WHERE table_name = (%s) AND date > (%s) AND date < (%s) ORDER BY user", (self.HOrder2.currentText(), htpstart, htpend, ))
             atts = hcursor.fetchall()
             c = 0
             if atts != 'NULL':
@@ -1664,7 +1671,7 @@ class mainWindow(object):
                         self.HResults.setItem(c, i, cell)
                     c += 1
         if self.HOrder.currentIndex() == 1:
-            hcursor.execute("SELECT * FROM history WHERE user = (%s) ORDER BY table_name", (self.HOrder2.currentText(),))
+            hcursor.execute("SELECT * FROM history WHERE user = (%s) AND date > (%s) AND date < (%s) ORDER BY table_name", (self.HOrder2.currentText(),))
             atts = hcursor.fetchall()
             c = 0
             if atts != 'NULL':
